@@ -17,28 +17,21 @@ Follow-up TODOs: None
 
 ## Core Principles
 
-### I. Accessibility-First Development
-Every feature MUST be accessible to users with disabilities, following WCAG 2.1 Level AA guidelines. This includes proper semantic HTML, keyboard navigation support, screen reader compatibility, and sufficient color contrast ratios (4.5:1 for normal text, 3:1 for large text). All interactive elements MUST be keyboard accessible with visible focus indicators. ARIA attributes MUST be used correctly when semantic HTML alone is insufficient. This principle is non-negotiable as it ensures equal access for all users and compliance with legal requirements.
-
 ### II. Component-Based Architecture with shadcn/ui
 The application MUST utilize a component-based architecture leveraging shadcn/ui components and patterns. Components MUST be composable, reusable, and follow React best practices including proper prop typing with TypeScript. Each component MUST maintain a single responsibility and be independently testable. Custom components MUST follow shadcn/ui's composition patterns and styling approach using Tailwind CSS and CSS variables for theming. This ensures consistency, maintainability, and accelerates development through proven UI patterns.
 
-### III. Performance and User Experience Excellence
-The application MUST deliver optimal performance with Core Web Vitals targets: LCP < 2.5s, FID < 100ms, CLS < 0.1. Next.js features like server components, image optimization, font optimization, and code splitting MUST be utilized appropriately. Navigation MUST be intuitive with clear visual hierarchy, responsive design for all screen sizes, and smooth transitions. Loading states and error boundaries MUST provide meaningful feedback. This ensures users have a fast, smooth, and delightful experience across all devices.
+When creating new components, developers MUST:
+- Follow shadcn/ui design patterns and conventions.
+- Use Tailwind CSS for styling, adhering to the existing design system.
+- Use @shadcn-component-researcher for researching component details, examples, and installation commands. Also, to analyze requirements use @shadcn-requirements-analyzer.
 
 ## Development Standards
 
 ### Code Quality and TypeScript
-All code MUST be written in TypeScript with strict mode enabled. Type safety is mandatory - no `any` types without explicit justification. Components MUST have properly typed props and return types. API responses and data structures MUST be fully typed. ESLint and Prettier configurations MUST be followed for consistent code formatting.
+All code MUST be written in TypeScript with strict mode enabled. Type safety is mandatory - no `any` types without explicit justification. Components MUST have properly typed props and return types. API responses and data structures MUST be fully typed.
 
 
 ## Quality Assurance
-
-### Review Process
-All code changes MUST pass automated checks: linting, type checking, tests, and build verification. Accessibility audit MUST be run for UI changes. Performance budget MUST be validated for production builds. Manual testing MUST verify keyboard navigation and screen reader functionality for new features.
-
-### Documentation
-Components MUST have JSDoc comments describing purpose and usage. README MUST be updated for new features or setup changes. Accessibility considerations MUST be documented for custom interactive components.
 
 ## Governance
 
