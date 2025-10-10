@@ -1,48 +1,50 @@
-<!--
-Sync Impact Report
-==================
-Version change: [TEMPLATE] → 1.0.0
-Modified principles: NEW - 3 principles established
-Added sections: Core Principles, Development Standards, Quality Assurance, Governance
-Removed sections: N/A (initial constitution)
-Templates requiring updates:
-- .specify/templates/plan-template.md: ⚠ pending
-- .specify/templates/spec-template.md: ⚠ pending
-- .specify/templates/tasks-template.md: ⚠ pending
-- .specify/templates/commands/*.md: ⚠ pending
-Follow-up TODOs: None
--->
-
-# Prompt Library Constitution
+# [PROJECT_NAME] Constitution
+<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### II. Component-Based Architecture with shadcn/ui
-The application MUST utilize a component-based architecture leveraging shadcn/ui components and patterns. Components MUST be composable, reusable, and follow React best practices including proper prop typing with TypeScript. Each component MUST maintain a single responsibility and be independently testable. Custom components MUST follow shadcn/ui's composition patterns and styling approach using Tailwind CSS and CSS variables for theming. This ensures consistency, maintainability, and accelerates development through proven UI patterns.
+### [PRINCIPLE_1_NAME]
+<!-- Example: I. Library-First -->
+[PRINCIPLE_1_DESCRIPTION]
+<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-When creating new components, developers MUST:
-- Follow shadcn/ui design patterns and conventions.
-- Use Tailwind CSS for styling, adhering to the existing design system.
-- Use @shadcn-component-researcher for researching component details, examples, and installation commands. Also, to analyze requirements use @shadcn-requirements-analyzer.
+### [PRINCIPLE_2_NAME]
+<!-- Example: II. CLI Interface -->
+[PRINCIPLE_2_DESCRIPTION]
+<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
 
-## Development Standards
+### [PRINCIPLE_3_NAME]
+<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
+[PRINCIPLE_3_DESCRIPTION]
+<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-### Code Quality and TypeScript
-All code MUST be written in TypeScript with strict mode enabled. Type safety is mandatory - no `any` types without explicit justification. Components MUST have properly typed props and return types. API responses and data structures MUST be fully typed.
+### [PRINCIPLE_4_NAME]
+<!-- Example: IV. Integration Testing -->
+[PRINCIPLE_4_DESCRIPTION]
+<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
 
+### [PRINCIPLE_5_NAME]
+<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
+[PRINCIPLE_5_DESCRIPTION]
+<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
-## Quality Assurance
+## [SECTION_2_NAME]
+<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+
+[SECTION_2_CONTENT]
+<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+
+## [SECTION_3_NAME]
+<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+
+[SECTION_3_CONTENT]
+<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
 
 ## Governance
+<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-This constitution supersedes all other development practices for this project. Amendments require:
-1. Documented rationale for the change
-2. Impact assessment on existing code
-3. Migration plan if breaking changes are introduced
-4. Team consensus or project owner approval
+[GOVERNANCE_RULES]
+<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
 
-All pull requests MUST verify compliance with these principles. Violations MUST be addressed before merge. Exceptions require explicit justification and compensating controls.
-
-Runtime development guidance is maintained in project documentation and CLAUDE.md files for AI-assisted development.
-
-**Version**: 1.0.0 | **Ratified**: 2025-09-22 | **Last Amended**: 2025-09-22
+**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
