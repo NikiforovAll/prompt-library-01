@@ -1,11 +1,12 @@
 {
   "mcpServers": {
-    "playwright-test": {
+    "playwright": {
+      "type": "stdio",
       "command": "npx",
       "args": [
-        "playwright",
-        "run-test-mcp-server"
-      ]
+        "@playwright/mcp@latest"
+      ],
+      "env": {}
     }
   }
 }
