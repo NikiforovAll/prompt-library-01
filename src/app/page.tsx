@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { PromptCard } from '@/components/PromptCard';
 import { usePromptSearch } from '@/hooks/usePromptSearch';
 import { STUB_PROMPTS } from '@/data/prompts';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function HomePage() {
   const { query, setQuery, results, isSearching } = usePromptSearch(STUB_PROMPTS);
@@ -12,10 +13,15 @@ export default function HomePage() {
   return (
     <div className="container mx-auto py-8 px-4 max-w-4xl">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Prompt Library</h1>
-        <p className="text-muted-foreground">
-          Search and copy prompt templates for your AI workflows
-        </p>
+        <div className="flex items-start justify-between mb-2">
+          <div>
+            <h1 className="text-3xl font-bold mb-2">Prompt Library</h1>
+            <p className="text-muted-foreground">
+              Search and copy prompt templates for your AI workflows
+            </p>
+          </div>
+          <ThemeToggle />
+        </div>
       </header>
 
       <div className="mb-6">
