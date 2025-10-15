@@ -1,93 +1,310 @@
-# Claud Code Intensive Training
+# AI Prompt Management Library
 
+A modern, lightweight web application for managing and organizing AI prompt templates. Search, copy, and reuse your favorite prompts instantly.
 
+## Overview
 
-## Getting started
+This project provides a minimal, user-friendly interface for storing and accessing AI prompt templates. Built with Next.js and TypeScript, it focuses on speed and simplicity - search your prompts by keyword and copy them to your clipboard with a single click.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### Key Features
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- **⚡ Instant Search**: Real-time filtering of prompts by title or content
+- **📋 One-Click Copy**: Copy any prompt to clipboard with visual feedback
+- **🎨 Modern UI**: Clean interface built with shadcn/ui components
+- **🚀 Fast Performance**: Client-side filtering with sub-millisecond response times
+- **📱 Responsive Design**: Works seamlessly on desktop and mobile devices
 
-## Add your files
+## Tech Stack
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+- **Framework**: [Next.js 15.5.3](https://nextjs.org/) with App Router and Turbopack
+- **Language**: [TypeScript 5](https://www.typescriptlang.org/)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Components**: [shadcn/ui](https://ui.shadcn.com/) with Radix UI primitives
+- **Icons**: [lucide-react](https://lucide.dev/)
+- **Testing**: [Playwright](https://playwright.dev/)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18 or higher
+- npm, pnpm, or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/NikiforovAll/prompt-library.git
+cd prompt-library
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+pnpm install
+# or
+yarn install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+# or
+pnpm dev
+# or
+yarn dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+### Quick Start
+
+Once the application is running:
+
+1. **Search**: Type keywords in the search box (e.g., "meeting", "code review")
+2. **Browse**: View matching prompts with titles and preview text
+3. **Copy**: Click the copy button next to any prompt
+4. **Paste**: Use your copied prompt in any AI chat interface
+
+## Project Structure
 
 ```
-cd existing_repo
-git remote add origin https://gitbud.epam.com/epm-spai/learning/claud-code-intensive-training.git
-git branch -M main
-git push -uf origin main
+prompt-library/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout with Toaster
+│   │   ├── page.tsx            # Main search and display page
+│   │   └── globals.css         # Global styles
+│   ├── components/
+│   │   ├── ui/                 # shadcn/ui base components
+│   │   └── PromptCard.tsx      # Prompt display component
+│   ├── data/
+│   │   └── prompts.ts          # Prompt data (stub/demo)
+│   ├── hooks/
+│   │   └── usePromptSearch.ts  # Search logic hook
+│   ├── lib/
+│   │   └── utils.ts            # Utility functions
+│   └── types/
+│       └── prompt.ts           # TypeScript type definitions
+├── tests/
+│   └── prompt-library.spec.ts  # Playwright tests
+├── specs/
+│   └── 002-ai-prompt-management/ # Feature specifications
+├── .claude/                     # Claude Code configuration
+│   ├── agents/                  # Specialized AI agents
+│   └── commands/                # Custom slash commands
+└── .specify/                    # Spec Kit templates and scripts
 ```
 
-## Integrate with your tools
+## Development
 
-- [ ] [Set up project integrations](https://gitbud.epam.com/epm-spai/learning/claud-code-intensive-training/-/settings/integrations)
+### Available Scripts
 
-## Collaborate with your team
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build production bundle
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint for code quality
+- `npm test` - Run Playwright tests
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Adding New Prompts
 
-## Test and Deploy
+Edit `src/data/prompts.ts` to add your own prompts:
 
-Use the built-in continuous integration in GitLab.
+```typescript
+{
+  id: 'unique-id',
+  title: 'Your Prompt Title',
+  content: 'The full prompt text that will be copied...'
+}
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### Customizing UI
 
-***
+The project uses shadcn/ui components which are customizable via:
+- **Tailwind classes**: Modify component styling directly
+- **CSS variables**: Edit theme colors in `src/app/globals.css`
+- **Component variants**: Extend shadcn components using class-variance-authority
 
-# Editing this README
+## Development Workflow
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+This project integrates [Spec Kit](https://github.com/github/spec-kit) for structured feature development:
 
-## Suggestions for a good README
+### Planning Features
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+```bash
+# Create a new feature specification
+/speckit.specify
 
-## Name
-Choose a self-explaining name for your project.
+# Analyze requirements
+/speckit.analyze
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+# Generate implementation checklist
+/speckit.checklist
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+# Break down into tasks
+/speckit.tasks
+```
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### AI-Assisted Development
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Configured for [Claude Code](https://claude.ai/code) with specialized agents:
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+- **shadcn components**: Requirements analysis, component research, and implementation
+- **Playwright testing**: Test planning, generation, and healing
+- **Spec Kit integration**: Feature specifications and task management
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+See `.claude/agents/` for agent configurations.
+
+## Testing
+
+### Manual Testing
+
+1. Search with various keywords
+2. Verify copy functionality
+3. Check toast notifications
+4. Test edge cases (empty search, no results)
+
+### Automated Testing
+
+```bash
+# Run all tests
+npm test
+
+# Run in UI mode
+npx playwright test --ui
+
+# Run specific test
+npx playwright test prompt-library
+```
+
+Tests cover:
+- Search functionality
+- Copy to clipboard operations
+- Empty state handling
+- Toast notifications
+
+## Architecture Decisions
+
+### Why Client-Side Only?
+
+The MVP prioritizes simplicity and speed:
+- No server-side processing needed for search
+- Instant filtering without API calls
+- Easy deployment as static site
+- Future: Can add persistence layer when needed
+
+### Why Stub Data?
+
+Current implementation uses hardcoded prompts to:
+- Validate core functionality first
+- Avoid premature database integration
+- Enable rapid iteration and testing
+- Simplify initial deployment
+
+Future versions will support:
+- Local storage persistence
+- Import/export functionality
+- Database integration (optional)
 
 ## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+
+### Current (MVP - v0.1.0)
+- ✅ Search and filter prompts
+- ✅ Copy to clipboard
+- ✅ Toast notifications
+- ✅ Responsive UI
+
+### Planned (v0.2.0)
+- 📝 Edit existing prompts
+- ➕ Add new prompts
+- 💾 LocalStorage persistence
+- 🗂️ Categories and folders
+- 🔍 Advanced search (tags, metadata)
+
+### Future Considerations
+- User authentication
+- Cloud sync
+- Sharing prompts
+- Prompt versioning
+- Analytics and usage tracking
+
+See `specs/002-ai-prompt-management/v_next.md` for detailed future plans.
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Contributions are welcome! Please follow these steps:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Follow the Spec Kit workflow for feature planning
+4. Make your changes with tests
+5. Run linting and tests: `npm run lint && npm test`
+6. Commit with descriptive messages
+7. Push and create a pull request
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Code Style
+
+- TypeScript strict mode enabled
+- Follow Next.js and React conventions
+- Use shadcn/ui components when possible
+- Write tests for new features
+- Document complex logic
+
+## Troubleshooting
+
+### Copy Button Not Working
+
+**Issue**: Copy button doesn't copy text
+
+**Solutions**:
+- Ensure running on localhost or HTTPS (clipboard API requirement)
+- Check browser console for permission errors
+- Try in a different browser
+- Verify clipboard API support: `navigator.clipboard` exists
+
+### Toast Notifications Not Showing
+
+**Issue**: No confirmation after copying
+
+**Solutions**:
+- Verify `<Toaster />` in `src/app/layout.tsx`
+- Check that shadcn toast components are installed
+- Inspect browser console for errors
+- Clear browser cache and reload
+
+### Search Not Filtering
+
+**Issue**: Search box doesn't filter results
+
+**Solutions**:
+- Check browser console for JavaScript errors
+- Verify `usePromptSearch` hook is properly imported
+- Ensure state updates are working (add console.log)
+- Clear browser cache
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/) by Vercel
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Icons by [Lucide](https://lucide.dev/)
+- Feature planning powered by [Spec Kit](https://github.com/github/spec-kit)
+- Development assisted by [Claude Code](https://claude.ai/code)
+
+## Contact & Support
+
+- **Issues**: [GitHub Issues](https://github.com/NikiforovAll/prompt-library/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/NikiforovAll/prompt-library/discussions)
+- **Author**: [Oleksii Nikiforov](https://github.com/NikiforovAll)
+
+---
+
+**Status**: MVP Complete ✅ | **Version**: 0.1.0 | **Last Updated**: 2025-10-14
