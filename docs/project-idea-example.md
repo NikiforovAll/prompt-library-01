@@ -1,4 +1,4 @@
-## AI Prompt Management Library - Application Overview
+## workshop5. AI Prompt Management Library - Application Overview
 
 ### **What the Application Is**
 
@@ -10,15 +10,13 @@ The application opens with a clean, modern interface featuring a sidebar navigat
 
 The application is built around a hierarchical folder structure that allows users to organize prompts by logical grouping that makes sense for their needs. Users can navigate through their prompt library using the sidebar navigation, which displays folders and individual prompt files in a familiar tree structure.
 
-The home page serves as a central dashboard with search functionality that works across the entire prompt library. Users can quickly find prompts using keywords, tags, or content search without needing to remember the exact folder structure or location.
+The home page serves as a central dashboard with search functionality that works across the entire prompt library. Users can quickly find prompts using keywords, or content search without needing to remember the exact folder structure or location.
 
 ### **Core User Capabilities**
 
-Users can browse through their prompt collections using the familiar folder tree structure in the sidebar. Clicking on any prompt opens it in the main editor where they can view the full content, see metadata like tags and descriptions, and make modifications as needed. The editor provides syntax highlighting and clear indicators when files have unsaved changes.
+Users can browse through their prompt collections using the familiar folder tree structure in the sidebar. Clicking on any prompt opens it in the main editor where they can view the full content, see metadata like and descriptions, and make modifications as needed. The editor provides syntax highlighting and clear indicators when files have unsaved changes.
 
-The tagging system allows users to categorize prompts across folder boundaries. A data analysis prompt might live in a specific project folder but be tagged with "python," "visualization," and "reporting" so it appears in searches for any of those concepts. This creates multiple pathways for discovery beyond just folder organization.
-
-Users can search for prompts from the home page using keyword queries. The search looks through prompt titles, descriptions, tags, and content to find relevant matches across the entire prompt library simultaneously.
+Users can search for prompts from the home page using keyword queries. The search looks through prompt titles, descriptions, and content to find relevant matches across the entire prompt library simultaneously.
 
 ### **Common Usage Scenarios**
 
