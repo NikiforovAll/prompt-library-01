@@ -3,6 +3,7 @@
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { PromptCard } from '@/components/PromptCard';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { usePromptSearch } from '@/hooks/usePromptSearch';
 import { STUB_PROMPTS } from '@/data/prompts';
 
@@ -12,7 +13,10 @@ export default function HomePage() {
   return (
     <div className="container mx-auto py-8 px-4 max-w-4xl">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Prompt Library</h1>
+        <div className="flex items-start justify-between gap-4 mb-2">
+          <h1 className="text-3xl font-bold">Prompt Library</h1>
+          <ThemeToggle />
+        </div>
         <p className="text-muted-foreground">
           Search and copy prompt templates for your AI workflows
         </p>
